@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Arch Linux Desktop</title>
+  <link rel="stylesheet" href="desktop_assets/stylesheet/styles.css" />
+</head>
+<body>
+  <!-- Desktop -->
+  <div id="desktop" class="wallpaper wallpaper-1" aria-label="Desktop">
+
+    <!-- Top Bar -->
+    <header class="topbar">
+      <div class="topbar-left">
+        <div class="arch-badge" title="Arch Linux">
+          <span class="arch-a">A</span>
+        </div>
+        <button class="topbar-btn" id="btnActivities">Activities</button>
+      </div>
+
+      <div class="topbar-center">
+        <div class="topbar-title">Desktop</div>
+      </div>
+
+      <div class="topbar-right">
+        <div class="status-pill" title="Network / Audio / Battery">
+          <span>Wi-Fi</span>
+          <span>🔈</span>
+          <span>🔋</span>
+        </div>
+        <button class="topbar-btn clock" id="clockBtn" title="Clock"></button>
+      </div>
+    </header>
+
+    <!-- Dock -->
+    <nav class="dock" aria-label="Dock">
+      <button class="dock-item" data-open="terminal" title="Terminal">⌘</button>
+      <button class="dock-item" data-open="files" title="Files">📁</button>
+      <button class="dock-item" data-open="firefox" title="Firefox">🦊</button>
+      <button class="dock-item" data-open="settings" title="Settings">⚙️</button>
+    </nav>
+
+    <!-- Desktop Icons -->
+    <section class="icons" aria-label="Desktop icons">
+      <button class="icon" data-open="files">
+        <span class="icon-glyph">📁</span>
+        <span class="icon-label">Files</span>
+      </button>
+
+      <button class="icon" data-open="terminal">
+        <span class="icon-glyph">⌘</span>
+        <span class="icon-label">Terminal</span>
+      </button>
+
+      <button class="icon" data-open="firefox">
+        <span class="icon-glyph">🦊</span>
+        <span class="icon-label">Firefox</span>
+      </button>
+
+      <button class="icon" data-open="settings">
+        <span class="icon-glyph">⚙️</span>
+        <span class="icon-label">Settings</span>
+      </button>
+    </section>
+
+    <!-- Windows -->
+    <section id="windows" aria-label="Windows layer">
+      <!-- Terminal -->
+      <div class="window" id="win-terminal" data-app="terminal" style="left: 220px; top: 120px; width: 520px; height: 340px;">
+        <div class="titlebar">
+          <div class="title-left">
+            <span class="win-dot red" data-action="close" title="Close"></span>
+            <span class="win-dot yellow" data-action="min" title="Minimize"></span>
+            <span class="win-dot green" data-action="max" title="Maximize"></span>
+            <span class="title">Terminal</span>
+          </div>
+          <div class="title-right">
+            <span class="hint">arch@desktop:~</span>
+          </div>
+        </div>
+        <div class="content terminal">
+          <div class="term-output" id="termOutput">
+            <div>Welcome to <b>Arch Desktop</b> (HTML).</div>
+            <div>Type <code>help</code> and press Enter.</div>
+          </div>
+
+          <div class="term-input-row">
+            <span class="prompt">arch@desktop:~$</span>
+            <input id="termInput" class="term-input" autocomplete="off" spellcheck="false" />
+          </div>
+        </div>
+        <div class="resize-handle" aria-hidden="true"></div>
+      </div>
+
+      <!-- Files -->
+      <div class="window hidden" id="win-files" data-app="files" style="left: 300px; top: 190px; width: 640px; height: 420px;">
+        <div class="titlebar">
+          <div class="title-left">
+            <span class="win-dot red" data-action="close"></span>
+            <span class="win-dot yellow" data-action="min"></span>
+            <span class="win-dot green" data-action="max"></span>
+            <span class="title">Files</span>
+          </div>
+          <div class="title-right">
+            <span class="hint">/home/arch</span>
+          </div>
+        </div>
+        <div class="content files">
+          <aside class="sidebar" aria-label="Files sidebar">
+            <button class="side-item active" type="button" data-folder="home">Files</button>
+            <button class="side-item" type="button" data-folder="documents">Documents</button>
+            <button class="side-item" type="button" data-folder="downloads">Downloads</button>
+            <button class="side-item" type="button" data-folder="pictures">Pictures</button>
+            <button class="side-item" type="button" data-folder="trash">Trash</button>
+          </aside>
+          <main class="filepane">
+            <div class="file-toolbar">
+              <button class="small-btn" id="btnSort">Sort</button>
+              <div class="spacer"></div>
+              <input class="search" placeholder="Search" />
+            </div>
+            <div class="file-grid" id="fileGrid"></div>
+          </main>
+        </div>
+        <div class="resize-handle" aria-hidden="true"></div>
+      </div>
+
+      <!-- Firefox -->
+      <div class="window hidden" id="win-firefox" data-app="firefox" style="left: 420px; top: 130px; width: 720px; height: 460px;">
+        <div class="titlebar">
+          <div class="title-left">
+            <span class="win-dot red" data-action="close"></span>
+            <span class="win-dot yellow" data-action="min"></span>
+            <span class="win-dot green" data-action="max"></span>
+            <span class="title">Firefox</span>
+          </div>
+          <div class="title-right">
+            <span class="hint">https://saylortwiftsecurity.org</span>
+          </div>
+        </div>
+        <div class="content browser">
+          <div class="browserbar">
+            <button class="navbtn">←</button>
+            <button class="navbtn">→</button>
+            <button class="navbtn">⟳</button>
+            <input class="url" value="https://saylortwiftsecurity.org" />
+            <button class="navbtn">⭐</button>
+          </div>
+          <div class="browserpage">
+            <h2>Saylor Twift Security</h2>
+            <p><b>Keep It Simple.</b> Look for the hackers name throughout the desktop and report back to the police website.</p>
+
+          </div>
+        </div>
+        <div class="resize-handle" aria-hidden="true"></div>
+      </div>
+
+      <!-- Settings -->
+      <div class="window hidden" id="win-settings" data-app="settings" style="left: 520px; top: 240px; width: 520px; height: 380px;">
+        <div class="titlebar">
+          <div class="title-left">
+            <span class="win-dot red" data-action="close"></span>
+            <span class="win-dot yellow" data-action="min"></span>
+            <span class="win-dot green" data-action="max"></span>
+            <span class="title">Settings</span>
+          </div>
+          <div class="title-right">
+            <span class="hint">Appearance</span>
+          </div>
+        </div>
+        <div class="content settings">
+          <h3>Appearance</h3>
+          <div class="settings-grid">
+            <div class="setting-card">
+              <div class="setting-title">Wallpaper</div>
+              <div class="setting-desc">Switch desktop wallpaper preset.</div>
+              <div class="setting-actions">
+                <button class="small-btn" data-wallpaper="1">1</button>
+                <button class="small-btn" data-wallpaper="2">2</button>
+                <button class="small-btn" data-wallpaper="3">3</button>
+              </div>
+            </div>
+
+            <div class="setting-card">
+              <div class="setting-title">Accent</div>
+              <div class="setting-desc">Arch-like cyan accent toggle.</div>
+              <div class="setting-actions">
+                <button class="small-btn" id="btnAccent">Toggle Accent</button>
+              </div>
+            </div>
+
+            <div class="setting-card">
+              <div class="setting-title">About</div>
+              <div class="setting-desc">
+                “Desktop” is draggable and resizable. Right-click the desktop.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="resize-handle" aria-hidden="true"></div>
+      </div>
+
+    <!-- Context Menu -->
+    <div id="ctxMenu" class="ctx-menu" role="menu" aria-hidden="true">
+      <button class="ctx-item" id="ctxNewFolder" role="menuitem">New Folder</button>
+      <button class="ctx-item" id="ctxRefresh" role="menuitem">Refresh</button>
+      <div class="ctx-sep"></div>
+      <button class="ctx-item" id="ctxWallpaper" role="menuitem">Change Wallpaper</button>
+    </div>
+
+    <!-- Toast -->
+    <div id="toast" class="toast" aria-live="polite" aria-atomic="true"></div>
+
+  </div>
+
+  <script src="desktop_assets/scripts/script.js"></script>
+</body>
+</html>
