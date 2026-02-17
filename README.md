@@ -28,7 +28,6 @@ This project is designed to introduce users to fundamental cybersecurity concept
 ## 🛠️ Technologies Used
 
 - **HTML, CSS, JavaScript** – Frontend and interactivity
-- **Unity Engine** – Cutscene creation and immersive elements
 - **Figma** – UI/UX design and prototyping
 - **GitHub** – Version control and project hosting
 
@@ -74,13 +73,6 @@ Each puzzle contributes to uncovering the final answer.
 - Audio integration for immersion
 - Multiplayer / classroom mode
 - Analytics for tracking player progress
-
----
-
-## 👤 Author
-
-**Chase Marsalko**  
-University of Pittsburgh – Information Science  
 
 ---
 
