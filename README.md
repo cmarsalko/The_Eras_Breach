@@ -156,9 +156,3 @@ All scenarios are fictional but inspired by real cybersecurity practices.
 3. Request a review from teammates.  
 4. Once approved, the PR will be merged into main.  
 
-
-
-## To Start
-Run either command in cmd
-    node server.js
-    npm run dev
