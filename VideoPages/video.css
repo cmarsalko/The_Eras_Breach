@@ -14,35 +14,23 @@ body{
   background:rgb(97, 95, 95);
   font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
 
-  /* layout */
+
   display:flex;
   flex-direction:column;
   align-items:center;
 
-  /* required for static layers */
+
   position:relative;
   overflow-x:hidden;
 }
 
-
-/* ============================= */
-/* MOVING STATIC BACKGROUND     */
-/* ============================= */
-
-/* =========================================
-   CRT / HACKED MONITOR EFFECTS (BACKGROUND)
-   - grey moving static
-   - scanlines
-   - flicker
-   - occasional horizontal glitch
-   ========================================= */
 
 body{
   position:relative;
   overflow-x:hidden;
 }
 
-/* Layer 1: Grey moving noise */
+
 body::before{
   content:"";
   position:fixed;
@@ -50,19 +38,19 @@ body::before{
   pointer-events:none;
   z-index:0;
 
-  /* Greyer noise texture */
+  
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' fill='white' opacity='.9'/%3E%3C/svg%3E");
   background-repeat:repeat;
 
-  opacity:0.22;                 /* static strength */
-  mix-blend-mode:screen;        /* makes it “grey” on black */
+  opacity:0.22;                 
+  mix-blend-mode:screen;        
 
   animation:
     staticShift 0.09s steps(2) infinite,
     jitter 5s infinite;
 }
 
-/* Layer 2: Scanlines + subtle vignette */
+
 body::after{
   content:"";
   position:fixed;
@@ -71,7 +59,7 @@ body::after{
   z-index:0;
 
   background:
-    /* scanlines */
+    
     repeating-linear-gradient(
       to bottom,
       rgba(255,255,255,0.06) 0px,
@@ -79,7 +67,7 @@ body::after{
       rgba(0,0,0,0.08) 2px,
       rgba(0,0,0,0.08) 4px
     ),
-    /* vignette */
+    
     radial-gradient(
       ellipse at center,
       rgba(0,0,0,0) 55%,
@@ -92,15 +80,13 @@ body::after{
   animation:flicker 3s infinite;
 }
 
-/* keep your real content above the effects */
+
 header, .frame{
   position:relative;
   z-index:1;
 }
 
-/* ---- animations ---- */
 
-/* moves the noise around rapidly */
 @keyframes staticShift{
   0%   { transform:translate(0,0); }
   25%  { transform:translate(-12px,8px); }
@@ -109,7 +95,7 @@ header, .frame{
   100% { transform:translate(0,0); }
 }
 
-/* brightness flicker */
+
 @keyframes flicker{
   0%,100% { opacity:0.18; }
   5%      { opacity:0.28; }
@@ -125,7 +111,7 @@ header, .frame{
   90%     { opacity:0.27; }
 }
 
-/* occasional horizontal glitch/jitter */
+
 @keyframes jitter{
   0%, 92%, 100% { clip-path: inset(0 0 0 0); }
   93% { transform:translate(18px, -6px); clip-path: inset(12% 0 70% 0); }
@@ -134,9 +120,7 @@ header, .frame{
   96% { transform:translate(0,0); clip-path: inset(0 0 0 0); }
 }
 
-/* ============================= */
-/* HEADER                       */
-/* ============================= */
+
 
 header{
   background-color:black;
@@ -173,9 +157,7 @@ nav a:hover{
 }
 
 
-/* ============================= */
-/* VIDEO FRAME                  */
-/* ============================= */
+/* Placeholder until we add the actual video */
 
 .frame{
   width:min(980px, calc(100% - 64px));
