@@ -7,6 +7,10 @@ html, body {
 
 body {
     background-color: #34b591;
+    background-image: url("../pexels-pixabay-33687.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 header {
@@ -66,7 +70,7 @@ nav a:hover {
 }
 
 button {
-    width: 150px;
+    width: 200px;
     height: 70px;
     font-family: Roboto, sans-serif;
     font-size: 20px;
