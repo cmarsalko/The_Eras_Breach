@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="HomePage_and_PoliceReport_Assets/stylePR.css">
     <title>Police Report First Page</title>
+    <link rel="stylesheet" href="HomePage_and_PoliceReport_Assets/stylePR.css">
 </head>
 
 <body>
@@ -13,9 +13,11 @@
         <h1>The Eras Breach</h1>
         <nav>
             <ul>
-                <li><a href="PoliceReportEscapeRoom.html">Home</a></li>
-                <li><a href="index.html">Reset</a></li>
-                <!--Home button will always take you back to this page, reset takes you to start game page-->
+                <li><a href="/PoliceReportEscapeRoom.html">Home</a></li>
+                <li><a href="/Game2HomePage.html">Reset</a></li>
+                <li><a href="">Setup</a></li>
+                <!--Main Page will take you back to the 3 game selection, reset takes you to this page
+                Setup should be PW protected and for teachers only?-->
             </ul>
         </nav>
     </header>
@@ -26,19 +28,36 @@
         <img src="" alt="police-report-image">
     </div>
 
-    <p class="report">Dear Agents,<br><br>
-        Welcome to your new job working on the top-secret Saylor Twift case as cyber investigators. As you may know, our
-        client, Saylor Twift, has recently been hacked, resulting in the exposure of unreleased music.
 
-        Luckily, the anonymous suspect left behind their briefcase and lockbox at a recent Saylor Twift concert, which
-        you have access to on your desk. Your team has been hired to investigate this hacker and stop them before they
-        release more music. You can do this by using the information in the briefcase and lockbox to discover their
-        password and break into their computer.<br><br>
+    <div class="info-section">
+        <p>Case No: 12131989</p>
+        <p>Date: 02-22-2026</p>
+        <p>Responding Officer: David Johnson</p>
+        <p>Prepared by: David Johnson</p>
+    </div>
 
-        However, we have a few rules we'd like to go over.
+    <p class="divider">
+        ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    </p>
+
+    <div class="report-container">
+        <p class="report">Dear Agents,<br><br>
+            Welcome to your new job working on the top-secret Saylor Twift case as cyber investigators. As you may know,
+            our
+            client, Saylor Twift, has recently been hacked, resulting in the exposure of unreleased music.
+
+            Luckily, the anonymous suspect left behind their briefcase and lockbox at a recent Saylor Twift concert,
+            which
+            you have access to on your desk. Your team has been hired to investigate this hacker and stop them before
+            they
+            release more music. You can do this by using the information in the briefcase and lockbox to discover their
+            password and break into their computer.<br><br>
+
+            However, we have a few rules we'd like to go over.
         <ol class="rules-list">
             <li>
-                Preserve the evidence. Be respectful of the artifacts and don't break anything. We want this project to be
+                Preserve the evidence. Be respectful of the artifacts and don't break anything. We want this project to
+                be
                 available for future agents.
             </li>
             <li>
@@ -50,29 +69,39 @@
                 investigation process.
             </li>
         </ol>
-    
+
         Work together to find the attacker's identity. Once you have the name,
-        enter it below and click 'SUBMIT' to notify the authorities. This should take the team about 30 minutes to complete.
+        enter it below and click 'SUBMIT' to notify the authorities. This should take the team about 30 minutes to
+        complete.
         Good luck, agents! Your expertise and teamwork will be instrumental in cracking this case and safeguarding
         Saylor Twift's music. Let's bring this attacker to justice!<br><br>
-        
-        Saylor Twift's hacked page is linked here:
-        <a href="SaylorTwiftHacked.html" class="Saylor">Saylor's Hacked Webpage.</a>
-        Search the page for clues to identify the attacker.<br>
-        
-    </p>
 
-    <form class="information">
-        <div class="fname-grid">
-            <label for="first-name">First Name</label><br>
-            <input type="text" id="first-name"><br>
+        Saylor Twift's hacked page is linked here:
+        <a href="" class="saylor-twift-hacked-page">Saylor's Hacked Webpage.</a>
+        Search the page for clues to identify the attacker.<br>
+
+        </p>
+    </div>
+
+    <section class="identity-section">
+        <p class="section-title">Identify the Attacker</p>
+        <div class="form-elements-wrapper">
+            <form class="information">
+                <div class="form-grid">
+                    <div class="fname-grid">
+                        <label for="first-name">First Name</label><br>
+                        <input type="text" id="first-name"><br>
+                    </div>
+                    <div class="lname-grid">
+                        <label for="last-name">Last Name</label><br>
+                        <input type="text" id="last-name"><br>
+                    </div>
+                </div>
+                <input class="submit-button" type="submit" value="SUBMIT">
+            </form>
         </div>
-        <div class="lname-grid">
-            <label for="last-name">Last Name</label><br>
-            <input type="text" id="last-name"><br>
-        </div>
-        <input type="submit" value="SUBMIT">
-    </form>
+    </section>
+
 </body>
 
 </html>
