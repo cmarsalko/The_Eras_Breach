@@ -1,0 +1,87 @@
+/* CSS for Home Page */
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #34b591;
+    background-image: url("pexels-pixabay-33687.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+header {
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+header h1 {
+    color: white;
+    margin: 1em;
+    font-family: Roboto, sans-serif;
+    font-style: italic;
+}
+
+nav ul li {
+    margin-top: 1.75em;
+    display: inline-block;
+    list-style: none;
+    padding-right: 2em;
+    text-align: center;
+    font-family: Roboto, sans-serif;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+}
+
+nav a:hover {
+    text-decoration: underline;
+    
+}
+
+.introductory-video-container {
+    display: flex;
+    justify-content: center;
+}
+
+.p-container {
+    color: white;
+    font-family: Roboto, sans-serif;
+    font-size: 30px;
+    width: 1020px;
+    overflow-wrap: break-word;
+    margin: 0 auto;
+    font-family: Roboto, sans-serif;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.button-container {
+    display: grid;
+    place-items: center;
+    height: 200px;
+}
+
+button {
+    width: 200px;
+    height: 70px;
+    font-family: Roboto, sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: white;
+    background-color: black;
+    border: 4px solid white;
+}
+
+button:hover {
+    color: #34b591;
+    cursor: pointer;
+    background-color: white;
+}
