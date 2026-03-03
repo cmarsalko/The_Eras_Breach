@@ -11,7 +11,7 @@ window.addEventListener("load", function(){
         const correctLName = "joe";
         
         if (fName === correctFName && lName === correctLName) {
-            window.location.href = "https://youtu.be/sX98FYYGeMc";
+            window.location.href = "/endvideo.html";
         } else {
             alert("Incorrect. Try again.");
         }

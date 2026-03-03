@@ -7,7 +7,7 @@ html, body {
 
 body {
     background-color: #34b591;
-    background-image: url("pexels-pixabay-33687.jpg");
+    background-image: url("/HomePage_and_PoliceReport_Assets/caught-in-joy-ptVBlniJi50-unsplash.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -46,27 +46,38 @@ nav a:hover {
     
 }
 
-.introductory-video-container {
+.introductory-video-container iframe{
     display: flex;
     justify-content: center;
+    margin: 2em auto;
+    border: 5px solid white;
 }
 
-.p-container {
+.p-card{
+    background-color: rgb(237, 237, 237);
+    background: radial-gradient(circle, #6a11cb, #2575fc);
+    width: 550px;
+    border-radius: 10px;
+    margin: 0 auto;
+    padding: 1em;
+}
+
+.intro-paragraph {
     color: white;
     font-family: Roboto, sans-serif;
-    font-size: 30px;
-    width: 1020px;
+    font-size: 20px;
+    width: 525px;
     overflow-wrap: break-word;
     margin: 0 auto;
     font-family: Roboto, sans-serif;
-    font-weight: 500;
+    font-weight: 400;
     line-height: 1.5;
 }
 
 .button-container {
     display: grid;
     place-items: center;
-    height: 200px;
+    height: 125px;
 }
 
 button {

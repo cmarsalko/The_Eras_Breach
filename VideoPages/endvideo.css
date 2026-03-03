@@ -68,7 +68,6 @@ nav a:hover{
 /* Placeholder until we add the actual video */
 
 .frame{
-  width:min(980px, calc(100% - 64px));
   padding:32px;
   background:var(--page-bg);
   margin-top:60px;
@@ -79,7 +78,6 @@ nav a:hover{
 
 .video-box{
   width:100%;
-  aspect-ratio:16 / 9;
   background:var(--video-bg);
   display:grid;
   place-items:center;
