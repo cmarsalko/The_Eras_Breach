@@ -191,65 +191,61 @@ const FILE_SYSTEM = {
     { type: "folder", name: "Passwords", open: "passwords" },
     { type: "folder", name: "Logs", open: "logs" },
 
-    { type: "file", name: "notes.txt", icon: "📄", url: "./files/home/notes.html" },
-    { type: "file", name: "readme.txt", icon: "📄", url: "./files/home/readme.html" },
-    { type: "file", name: "todo.txt", icon: "📄", url: "./files/home/todo.html" },
-    { type: "file", name: "config.json", icon: "⚙️", url: "./files/home/config.html" },
-    { type: "file", name: "wallpaper.png", icon: "🖼️", url: "./files/home/wallpaper.html" },
-    { type: "file", name: "archive.zip", icon: "🗜️", url: "./files/home/archive.html" },
-    { type: "file", name: "backup.tar.gz", icon: "📦", url: "./files/home/backup.html" },
+    { type: "file", name: "notes.txt", icon: "📄", url: "./files/notes.pdf" },
+    { type: "file", name: "readme.txt", icon: "📄", url: "./files/readme.pdf" },
+    { type: "file", name: "todo.txt", icon: "📄", url: "./files/todo.pdf" },
+    { type: "file", name: "wallpaper.png", icon: "🖼️", url: "./files/cathy.jpeg" },
   ],
 
   documents: [
-    { type: "file", name: "incident_report.txt", icon: "📄", url: "./files/documents/incident_report.html" },
-    { type: "file", name: "employee_notes.txt", icon: "📄", url: "./files/documents/employee_notes.html" },
-    { type: "file", name: "auth.log", icon: "📄", url: "./files/documents/auth_log.html" },
-    { type: "file", name: "staff_directory.txt", icon: "📄", url: "./files/documents/staff_directory.html" },
-    { type: "file", name: "meeting_minutes.txt", icon: "📄", url: "./files/documents/meeting_minutes.html" },
-    { type: "file", name: "budget.xlsx", icon: "📊", url: "./files/documents/budget.html" },
-    { type: "file", name: "presentation.pptx", icon: "📊", url: "./files/documents/presentation.html" },
+    { type: "file", name: "incident_report.txt", icon: "📄", url: "./files/documents/incident_report.pdf" },
+    { type: "file", name: "employee_notes.txt", icon: "📄", url: "./files/documents/employee_notes.pdf" }, // RED HERING: T CODER 
+    { type: "file", name: "auth.log", icon: "📄", url: "./files/documents/auth_log.pdf" },
+    { type: "file", name: "staff_directory.txt", icon: "📄", url: "./files/documents/staff_directory.pdf" },
+    { type: "file", name: "meeting_minutes.txt", icon: "📄", url: "./files/documents/meeting_minutes.pdf" },
+    { type: "file", name: "budget.xlsx", icon: "📊", url: "./files/documents/budget.pdf" },
+    { type: "file", name: "presentation.pptx", icon: "📊", url: "./files/documents/presentation.pdf" },
   ],
 
   downloads: [
-    { type: "file", name: "installer.exe", icon: "💿", url: "./files/downloads/installer.html" },
-    { type: "file", name: "leaks.zip", icon: "🗜️", url: "./files/downloads/leaks.html" },
-    { type: "file", name: "music.mp3", icon: "🎵", url: "./files/downloads/music.html" },
-    { type: "file", name: "video.mp4", icon: "🎬", url: "./files/downloads/video.html" },
-    { type: "file", name: "report.pdf", icon: "📄", url: "./files/downloads/report.html" },
+    { type: "file", name: "leaked_song1.txt", icon: "🗜️", url: "./files/downloads/leaked_song1.pdf" }, // ONE OF THE LEAKED SONGS
+    { type: "file", name: "music.mp3", icon: "🎵", url: "https://www.youtube.com/watch?v=Aq5WXmQQooo&list=RDAq5WXmQQooo&start_radio=1" },
+    { type: "file", name: "video.mp4", icon: "🎬", url: "https://www.youtube.com/watch?v=zerp5bakP-0" },
+    { type: "file", name: "report.pdf", icon: "📄", url: "./files/downloads/report.pdf" },
   ],
 
   pictures: [
-    { type: "file", name: "selfie.png", icon: "🖼️", url: "./files/pictures/selfie.html" },
-    { type: "file", name: "office.jpg", icon: "🖼️", url: "./files/pictures/office.html" },
-    { type: "file", name: "whiteboard.png", icon: "🖼️", url: "./files/pictures/whiteboard.html" },
-    { type: "file", name: "diagram.png", icon: "🖼️", url: "./files/pictures/diagram.html" },
+    { type: "file", name: "selfie.png", icon: "🖼️", url: "./files/pictures/selfie1.jpg" },
+    { type: "file", name: "office.jpg", icon: "🖼️", url: "./files/pictures/office1.jpg" },
+    { type: "file", name: "whiteboard.png", icon: "🖼️", url: "./files/pictures/whiteboard.jpeg" },
+    { type: "file", name: "diagram.png", icon: "🖼️", url: "./files/pictures/diagram.png" },
   ],
 
   trash: [
-    { type: "file", name: "old_passwords.txt", icon: "📄", url: "./files/trash/old_passwords.html" },
-    { type: "file", name: "deleted_log.txt", icon: "📄", url: "./files/trash/deleted_log.html" },
-    { type: "file", name: "temp.txt", icon: "📄", url: "./files/trash/temp.html" },
+    { type: "file", name: "old_passwords.txt", icon: "📄", url: "./files/trash/old_passwords.pdf" }, // LAST NAME: JOE 
+    { type: "file", name: "deleted_log.txt", icon: "📄", url: "./files/trash/deleted_log.pdf" },
+    { type: "file", name: "temp.txt", icon: "📄", url: "./files/trash/temp.pdf" },
   ],
 
-  // Subfolders
   projects: [
-    { type: "file", name: "todo.txt", icon: "📄", url: "./files/projects/todo.html" },
-    { type: "file", name: "prototype.fig", icon: "📦", url: "./files/projects/prototype.html" },
+    { type: "file", name: "todo.txt", icon: "📄", url: "./files/projects/projects_todo.pdf" },
+    { type: "file", name: "prototype.fig", icon: "📦", url: "./files/projects/projects_prototype.pdf" },
   ],
 
   reciepts: [
-    { type: "file", name: "receipt_001.txt", icon: "📄", url: "./files/reciepts/receipt_001.html" },
-    { type: "file", name: "receipt_002.txt", icon: "📄", url: "./files/reciepts/receipt_002.html" },
+    { type: "file", name: "receipt_10-21-25.txt", icon: "📄", url: "./files/receipts/receipt_tequila_cowboy.pdf" },
+    { type: "file", name: "receipt_002.txt", icon: "📄", url: "./files/receipts/receipt_dicks_hos.pdf" },
   ],
 
   passwords: [
-    { type: "file", name: "admin_password.txt", icon: "📄", url: "./files/passwords/admin_password.html" },
-    { type: "file", name: "user_password.txt", icon: "📄", url: "./files/passwords/user_password.html" },
+    { type: "file", name: "admin_password.txt", icon: "📄", url: "./files/passwords/admin_password.pdf" },
+    { type: "file", name: "user_password.txt", icon: "📄", url: "./files/passwords/user_password.pdf" },
+    { type: "file", name: "moms_passwords.txt", icon: "📄", url: "./files/passwords/moms_passwords.pdf" }, // FIRST NAME: JONAS
   ],
 
   logs: [
-    { type: "file", name: "system.log", icon: "📄", url: "./files/logs/system.html" },
-    { type: "file", name: "network.log", icon: "📄", url: "./files/logs/network.html" },
+    { type: "file", name: "system.log", icon: "📄", url: "./files/logs/system.pdf" },
+    { type: "file", name: "network.log", icon: "📄", url: "./files/logs/network.pdf" },
   ],
 };
 
