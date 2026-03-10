@@ -33,16 +33,6 @@ This project is designed to introduce users to fundamental cybersecurity concept
 
 ---
 
-## 🎮 How to Play
-
-1. Open `Desktop.html` in a browser  
-2. Navigate through files and folders  
-3. Analyze clues and solve puzzles  
-4. Determine the identity of the hacker  
-5. Submit the correct name in the investigation portal  
-
----
-
 ## 🧠 Puzzle Design
 
 The game incorporates multiple puzzle types:
