@@ -7,7 +7,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@300;400;600;700&family=Share+Tech+Mono&family=Special+Elite&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="HomePage_and_PoliceReport_Assets/stylePoliceReport.css">
-    <script src="script.js"></script>
 </head>
 <body>
 
@@ -216,16 +215,17 @@
     }
 
     document.getElementById('information-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const first = document.getElementById('first-name').value.trim().toLowerCase();
-    const last = document.getElementById('last-name').value.trim().toLowerCase();
-    if (first === 'jonas' && last === 'joe') {
-        clearInterval(interval);
-        timerEl.textContent = formatTime(seconds);
-        timerEl.classList.add('timer-solved');
-        window.location.href = 'endvideo.html#' + formatTime(seconds);
-    }
-});
+        e.preventDefault();
+        const first = document.getElementById('first-name').value.trim().toLowerCase();
+        const last = document.getElementById('last-name').value.trim().toLowerCase();
+        if (first === 'jonas' && last === 'joe') {
+            clearInterval(interval);
+            const finalTime = formatTime(seconds);
+            timerEl.textContent = finalTime;
+            timerEl.classList.add('timer-solved');
+            window.location.href = 'endvideo.html#' + finalTime;
+        }
+    });
 </script>
 
 </body>
