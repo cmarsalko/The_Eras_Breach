@@ -1,232 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Police Report — The Eras Breach</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@300;400;600;700&family=Share+Tech+Mono&family=Special+Elite&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="HomePage_and_PoliceReport_Assets/stylePoliceReport.css">
+    <title>Police Report First Page</title>
+    <link rel="stylesheet" href="HomePage_and_PoliceReport_Assets/stylePR.css">
+    <script src="script.js"></script>
 </head>
+
 <body>
+    <header>
+        <h1>The Eras Breach</h1>
+        <nav>
+            <ul>
+                <li><a href="/PoliceReportEscapeRoom.html">Police Report</a></li>
+                <li><a href="index.html">Reset</a></li>
+                <!--Main Page will take you back to the 3 game selection, reset takes you to this page
+                Setup should be PW protected and for teachers only?-->
+            </ul>
+        </nav>
+    </header>
 
-<!-- ── MATCHING HEADER ── -->
-<header>
-    <span class="logo-text">THE ERAS <span>BREACH</span></span>
-    <div class="timer-display" id="timer">00:00</div>
-    <nav>
-        <ul>
-            <li><a href="index.html">Back to Start</a></li>
-        </ul>
-    </nav>
-</header>
+    <h2>Police Report</h2>
 
-<div class="page-bg"></div>
 
-<main>
-    <div class="report-doc">
-
-        <!-- Department header band -->
-        <div class="doc-header">
-            <div class="doc-header-left">
-                <div class="dept-seal">
-                    <div class="seal-ring">
-                        <span class="seal-star">★</span>
-                    </div>
-                </div>
-                <div class="dept-info">
-                    <div class="dept-name">CYBER CRIMES DIVISION</div>
-                    <div class="dept-sub">Department of Digital Investigations • Est. 1989</div>
-                </div>
-            </div>
-            <div class="doc-header-right">
-                <div class="stamp-classified">CLASSIFIED</div>
-            </div>
-        </div>
-
-        <!-- Title bar -->
-        <div class="doc-title-bar">
-            <h1 class="doc-title">POLICE REPORT</h1>
-            <div class="doc-title-sub">Unauthorized System Intrusion / Music Data Breach</div>
-        </div>
-
-        <!-- Meta grid — original case info -->
-        <div class="meta-grid">
-            <div class="meta-field">
-                <span class="meta-label">Case No.</span>
-                <span class="meta-value">12131989</span>
-            </div>
-            <div class="meta-field">
-                <span class="meta-label">Date</span>
-                <span class="meta-value">02-22-2026</span>
-            </div>
-            <div class="meta-field">
-                <span class="meta-label">Responding Officer</span>
-                <span class="meta-value">Lautner Taylor</span>
-            </div>
-            <div class="meta-field">
-                <span class="meta-label">Prepared By</span>
-                <span class="meta-value">Lautner Taylor</span>
-            </div>
-            <div class="meta-field">
-                <span class="meta-label">Classification</span>
-                <span class="meta-value red">TOP SECRET</span>
-            </div>
-            <div class="meta-field">
-                <span class="meta-label">Status</span>
-                <span class="meta-value red">ACTIVE ●</span>
-            </div>
-        </div>
-
-        <div class="doc-divider"></div>
-
-        <!-- Original narrative text, preserved verbatim -->
-        <div class="doc-section">
-            <div class="doc-section-label">I. NARRATIVE</div>
-            <div class="doc-body">
-                <p>Dear Agents,</p>
-                <p>
-                    Welcome to your new job working on the top-secret Saylor Twift case as cyber investigators. As you may know,
-                    our client, Saylor Twift, has recently been hacked, resulting in the exposure of unreleased music.
-                </p>
-                <p>
-                    Luckily, the anonymous suspect left behind their briefcase and lockbox at a recent Saylor Twift concert,
-                    which you have access to on your desk. Your team has been hired to investigate this hacker and stop them before
-                    they release more music. You can do this by using the information in the briefcase and lockbox to discover their
-                    password and break into their computer.
-                </p>
-                <p>However, we have a few rules we'd like to go over.</p>
-
-                <ol class="rules-list">
-                    <li>Preserve the evidence. Be respectful of the artifacts and don't break anything. We want this project to be available for future agents.</li>
-                    <li>No cheating, including no phones. We can't risk this information being compromised. You may consult your instructor if you need any hints!</li>
-                    <li>Teams are permitted to use their own scrap paper for note-taking and problem-solving throughout the investigation process.</li>
-                </ol>
-
-                <p>
-                    Work together to find the attacker's identity. Once you have the name,
-                    enter it below and click 'SUBMIT' to notify the authorities. This should take the team about 30 minutes to complete.
-                    Good luck, agents! Your expertise and teamwork will be instrumental in cracking this case and safeguarding
-                    Saylor Twift's music. Let's bring this attacker to justice!
-                </p>
-
-                <p class="evidence-callout">
-                    Saylor Twift's hacked page is linked here:
-                    <a href="SaylorTwiftHacked.html" target="_blank" class="evidence-link">Saylor's Hacked Webpage.</a>
-                    Search the page for clues to identify the attacker.
-                </p>
-            </div>
-        </div>
-
-        <div class="doc-divider"></div>
-
-        <!-- Suspect ID form -->
-        <div class="doc-section">
-            <div class="doc-section-label">II. SUSPECT IDENTIFICATION</div>
-            <div class="doc-body">
-                <form id="information-form" class="information">
-                    <div class="form-row">
-                        <div class="form-field">
-                            <label for="first-name">First Name</label>
-                            <input type="text" id="first-name" placeholder="Enter first name">
-                        </div>
-                        <div class="form-field">
-                            <label for="last-name">Last Name</label>
-                            <input type="text" id="last-name" placeholder="Enter last name">
-                        </div>
-                    </div>
-                    <div class="submit-row">
-                        <input class="submit-button" type="submit" value="SUBMIT">
-                    </div>
-                </form>
-            </div>
-        </div>
-
-        <!-- Signature block -->
-        <div class="doc-section sig-section">
-            <div class="sig-grid">
-                <div class="sig-field">
-                    <div class="sig-line"></div>
-                    <div class="sig-label">Investigating Agent Signature</div>
-                </div>
-                <div class="sig-field">
-                    <div class="sig-line"></div>
-                    <div class="sig-label">Date</div>
-                </div>
-                <div class="sig-field">
-                    <div class="sig-line"></div>
-                    <div class="sig-label">Badge No.</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Document footer -->
-        <div class="doc-footer">
-            <span>CYBER CRIMES DIVISION — CONFIDENTIAL</span>
-            <span>CASE NO. 12131989</span>
-            <span>PAGE 1 OF 1</span>
-        </div>
-
+    <div class="info-section">
+        <p>Case No: 12131989</p>
+        <p>Date: 02-22-2026</p>
+        <p>Responding Officer: David Johnson</p>
+        <p>Prepared by: David Johnson</p>
     </div>
-</main>
 
-<!-- Ticker -->
-<div class="ticker-bar">
-    <div class="ticker-inner">
-        CASE NO. 12131989 — ACTIVE
-        <span class="sep">◆</span>
-        ENCRYPTION: AES-256
-        <span class="sep">◆</span>
-        SUSPECT: UNKNOWN
-        <span class="sep">◆</span>
-        OFFICER: DAVID JOHNSON
-        <span class="sep">◆</span>
-        STATUS: BREACH IN PROGRESS
-        <span class="sep">◆</span>
-        CLASSIFICATION: TOP SECRET
-        <span class="sep">◆</span>
-        CASE NO. 12131989 — ACTIVE
-        <span class="sep">◆</span>
-        ENCRYPTION: AES-256
-        <span class="sep">◆</span>
-        SUSPECT: UNKNOWN
-        <span class="sep">◆</span>
+    <p class="divider">
+        ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    </p>
+
+    <div class="report-container">
+        <p class="report">Dear Agents,<br><br>
+            Welcome to your new job working on the top-secret Saylor Twift case as cyber investigators. As you may know,
+            our
+            client, Saylor Twift, has recently been hacked, resulting in the exposure of unreleased music.
+
+            Luckily, the anonymous suspect left behind their briefcase and lockbox at a recent Saylor Twift concert,
+            which
+            you have access to on your desk. Your team has been hired to investigate this hacker and stop them before
+            they
+            release more music. You can do this by using the information in the briefcase and lockbox to discover their
+            password and break into their computer.<br><br>
+
+            However, we have a few rules we'd like to go over.
+        <ol class="rules-list">
+            <li>
+                Preserve the evidence. Be respectful of the artifacts and don't break anything. We want this project to
+                be
+                available for future agents.
+            </li>
+            <li>
+                No cheating, including no phones. We can't risk this information being compromised. You may consult your
+                instructor if you need any hints!
+            </li>
+            <li>
+                Teams are permitted to use their own scrap paper for note-taking and problem-solving throughout the
+                investigation process.
+            </li>
+        </ol>
+
+        Work together to find the attacker's identity. Once you have the name,
+        enter it below and click 'SUBMIT' to notify the authorities. This should take the team about 30 minutes to
+        complete.
+        Good luck, agents! Your expertise and teamwork will be instrumental in cracking this case and safeguarding
+        Saylor Twift's music. Let's bring this attacker to justice!<br><br>
+
+        Saylor Twift's hacked page is linked here:
+        <a href="SaylorTwiftHacked.html" target="_blank" class="saylor-twift-hacked-page">Saylor's Hacked Webpage.</a>
+        Search the page for clues to identify the attacker.<br>
+
+        </p>
     </div>
-</div>
 
-<script>
-    const params = new URLSearchParams(window.location.search);
-    let seconds = 0;
-    let interval = null;
-
-    const timerEl = document.getElementById('timer');
-
-    function formatTime(s) {
-        const m = Math.floor(s / 60).toString().padStart(2, '0');
-        const sec = (s % 60).toString().padStart(2, '0');
-        return `${m}:${sec}`;
-    }
-
-    if (params.get('start') === '1') {
-        interval = setInterval(() => {
-            seconds++;
-            timerEl.textContent = formatTime(seconds);
-        }, 1000);
-    }
-
-    document.getElementById('information-form').addEventListener('submit', function(e) {
-        e.preventDefault();
-        const first = document.getElementById('first-name').value.trim().toLowerCase();
-        const last = document.getElementById('last-name').value.trim().toLowerCase();
-        if (first === 'jonas' && last === 'joe') {
-            clearInterval(interval);
-            const finalTime = formatTime(seconds);
-            timerEl.textContent = finalTime;
-            timerEl.classList.add('timer-solved');
-            window.location.href = 'endvideo.html#' + finalTime;
-        }
-    });
-</script>
+    <section class="identity-section">
+        <p class="section-title">Identify the Attacker</p>
+        <div class="form-elements-wrapper">
+            <form id="information-form" class="information">
+                <div class="form-grid">
+                    <div class="fname-grid">
+                        <label for="first-name">First Name</label><br>
+                        <input type="text" id="first-name"><br>
+                    </div>
+                    <div class="lname-grid">
+                        <label for="last-name">Last Name</label><br>
+                        <input type="text" id="last-name"><br>
+                    </div>
+                </div>
+                <input class="submit-button" type="submit" value="SUBMIT">
+            </form>
+        </div>
+    </section>
 
 </body>
+
 </html>

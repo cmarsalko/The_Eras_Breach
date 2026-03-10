@@ -1,177 +1,41 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Breaking News — The Eras Breach</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Share+Tech+Mono&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="VideoPages/endvideo.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Video Section</title>
+
+  <link rel="stylesheet" href="VideoPages/endvideo.css">
 </head>
+
 <body>
+  <header>
+        <h1>The Eras Breach</h1>
+        <nav>
+            <ul>
+                <li><a href="PoliceReportEscapeRoom.html">Police Report</a></li>
+                <li><a href="index.html">Reset</a></li>
+                <!--Home button will always take you back to this page, reset takes you to start game page-->
+            </ul>
+        </nav>
+    </header>
 
-<!-- ── MATCHING HEADER ── -->
-<header>
-    <span class="logo-text">THE ERAS <span>BREACH</span></span>
-    <div class="timer-final" id="final-time">--:--</div>
-    <nav>
-        <ul>
-            <li><a href="PoliceReportEscapeRoom.html">Police Report</a></li>
-            <li><a href="index.html">Reset</a></li>
-        </ul>
-    </nav>
-</header>
+  <main class="frame">
 
-<div class="page-bg"></div>
+    <!-- Placeholder version -->
+    <section class="video-box">
+      <div class="video-label"></div>
+    </section>
 
-<main>
+    <!-- Real video version  -->
+    <section class="video-box">
+      <iframe width="960" height="540" src="https://www.youtube.com/embed/sX98FYYGeMc?si=AsTQXmMWmaNRofk2" 
+      title="YouTube video player" frameborder="0" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+      referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </section>
 
-    <!-- Breaking news banner -->
-    <div class="breaking-banner">
-        <span class="breaking-label">BREAKING NEWS</span>
-        <span class="breaking-text">SAYLOR TWIFT HACKER IDENTIFIED — CYBER CRIMES DIVISION CLOSES CASE NO. 12131989</span>
-    </div>
-
-    <!-- News broadcast container -->
-    <div class="broadcast-container">
-
-        <!-- Network branding bar -->
-        <div class="network-bar">
-            <div class="network-logo">
-                <span class="network-name">CHANNEL 67 <span>NEWS</span></span>
-                <span class="network-sub">CYBER CRIMES DIVISION NETWORK</span>
-            </div>
-            <div class="network-time" id="live-clock">LIVE</div>
-        </div>
-
-        <!-- Video + sidebar layout -->
-        <div class="broadcast-body">
-
-            <div class="video-col">
-                <!-- Live indicator -->
-                <div class="live-bar">
-                    <span class="live-dot"></span> LIVE BROADCAST
-                </div>
-
-                <!-- Video -->
-                <div class="video-wrapper">
-                    <iframe
-                            width="100%" height="100%"
-                            src="https://www.youtube.com/embed/sX98FYYGeMc?si=AsTQXmMWmaNRofk2"
-                            title="YouTube video player"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            referrerpolicy="strict-origin-when-cross-origin"
-                            allowfullscreen>
-                    </iframe>
-                </div>
-
-                <!-- Lower-third chyron -->
-                <div class="chyron">
-                    <div class="chyron-category">CYBER CRIMES</div>
-                    <div class="chyron-headline">SAYLOR TWIFT HACKER FOUND — CASE CLOSED</div>
-                    <div class="chyron-sub">CALVIN HARRIS • HEAD NEWS ANCHOR</div>
-                </div>
-            </div>
-
-            <!-- Sidebar -->
-            <aside class="sidebar">
-                <div class="sidebar-block">
-                    <div class="sidebar-label">CASE STATUS</div>
-                    <div class="sidebar-value solved">SOLVED ✓</div>
-                </div>
-                <div class="sidebar-block">
-                    <div class="sidebar-label">SUSPECT</div>
-                    <div class="sidebar-value">JONAS JOE</div>
-                </div>
-                <div class="sidebar-block">
-                    <div class="sidebar-label">CASE NO.</div>
-                    <div class="sidebar-value">12131989</div>
-                </div>
-                <div class="sidebar-block">
-                    <div class="sidebar-label">OFFICER</div>
-                    <div class="sidebar-value">LAUTNER TAYLOR</div>
-                </div>
-                <div class="sidebar-block highlight-block">
-                    <div class="sidebar-label">YOUR TIME</div>
-                    <div class="sidebar-value time-value" id="sidebar-time">--:--</div>
-                </div>
-                <div class="sidebar-block">
-                    <div class="sidebar-label">DIVISION</div>
-                    <div class="sidebar-value">CYBER CRIMES</div>
-                </div>
-            </aside>
-
-        </div>
-
-        <!-- Scroll ticker inside broadcast -->
-        <div class="broadcast-ticker">
-            <span class="ticker-tag">BREAKING</span>
-            <div class="broadcast-ticker-inner" id="broadcast-ticker-inner">
-                HACKER IDENTIFIED IN SAYLOR TWIFT DATA BREACH
-                <span class="tsep">◆</span>
-                SUSPECT JONAS JOE APPREHENDED BY CYBER CRIMES DIVISION
-                <span class="tsep">◆</span>
-                UNRELEASED MUSIC SECURED — NO FURTHER LEAKS EXPECTED
-                <span class="tsep">◆</span>
-                CASE NO. 12131989 OFFICIALLY CLOSED
-                <span class="tsep">◆</span>
-                SAYLOR TWIFT THANKS INVESTIGATING AGENTS FOR THEIR SWIFT ACTION
-                <span class="tsep">◆</span>
-                HACKER IDENTIFIED IN SAYLOR TWIFT DATA BREACH
-                <span class="tsep">◆</span>
-                SUSPECT JONAS JOE APPREHENDED BY CYBER CRIMES DIVISION
-                <span class="tsep">◆</span>
-            </div>
-        </div>
-
-    </div>
-
-</main>
-
-<!-- Page-level ticker -->
-<div class="ticker-bar">
-    <div class="ticker-inner">
-        CASE CLOSED — SUSPECT IDENTIFIED
-        <span class="sep">◆</span>
-        JONAS JOE APPREHENDED
-        <span class="sep">◆</span>
-        CASE NO. 12131989
-        <span class="sep">◆</span>
-        SAYLOR TWIFT'S MUSIC IS SAFE
-        <span class="sep">◆</span>
-        MISSION COMPLETE
-        <span class="sep">◆</span>
-        CYBER CRIMES DIVISION
-        <span class="sep">◆</span>
-        CASE CLOSED — SUSPECT IDENTIFIED
-        <span class="sep">◆</span>
-        JONAS JOE APPREHENDED
-        <span class="sep">◆</span>
-        CASE NO. 12131989
-        <span class="sep">◆</span>
-    </div>
-</div>
-
-<script>
-    // Pull time from URL param passed by police report
-    const t = window.location.hash.replace('#', '');
-    if (t) {
-        document.getElementById('final-time').textContent = t;
-        document.getElementById('sidebar-time').textContent = t;
-    }
-
-    // Live clock in network bar
-    function updateClock() {
-        const now = new Date();
-        const h = now.getHours().toString().padStart(2, '0');
-        const m = now.getMinutes().toString().padStart(2, '0');
-        const s = now.getSeconds().toString().padStart(2, '0');
-        document.getElementById('live-clock').textContent = `${h}:${m}:${s}`;
-    }
-    setInterval(updateClock, 1000);
-    updateClock();
-</script>
+  </main>
 
 </body>
 </html>
