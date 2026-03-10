@@ -222,7 +222,8 @@
             clearInterval(interval);
             timerEl.textContent = formatTime(seconds);
             timerEl.classList.add('timer-solved');
-            window.location.href = 'endvideo.html?time=' + formatTime(seconds);
+            sessionStorage.setItem('finalTime', formatTime(seconds));
+            window.location.href = 'endvideo.html';
         }
     });
 </script>
