@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Login — Arch Desktop</title>
+  <link rel="stylesheet" href="desktop_assets/stylesheet/styles.css" />
+  <style>
+    #desktop.login-screen{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding: 24px;
+    }
+
+    .login-shell{
+      width: min(980px, 100%);
+      display:grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 16px;
+      align-items: stretch;
+    }
+
+    .login-hero, .login-card{
+      background: rgba(18, 22, 35, .62);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 18px;
+      box-shadow: 0 18px 60px rgba(0,0,0,.55);
+      backdrop-filter: blur(14px);
+      overflow:hidden;
+    }
+
+    .login-hero{
+      padding: 22px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      min-height: 420px;
+    }
+
+    .brand-row{
+      display:flex;
+      align-items:center;
+      gap: 12px;
+    }
+    .brand-badge{
+      width:44px; height:44px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, rgba(0,199,255,.35), rgba(0,199,255,.12));
+      border:1px solid rgba(0,199,255,.35);
+      display:grid;
+      place-items:center;
+      box-shadow: 0 8px 18px rgba(0,199,255,.12);
+      font-weight: 900;
+      color: var(--accent);
+      font-size: 18px;
+    }
+    .brand-text{
+      display:flex;
+      flex-direction:column;
+      line-height:1.1;
+    }
+    .brand-text b{ letter-spacing:.4px; }
+    .brand-text span{ opacity:.85; font-size: 12px; }
+
+    .hero-mid{
+      margin-top: 10px;
+    }
+    .hero-mid h1{
+      margin: 0 0 10px;
+      font-size: 28px;
+      letter-spacing: .3px;
+    }
+    .hero-mid p{
+      margin: 0;
+      opacity: .9;
+      line-height: 1.45;
+      max-width: 46ch;
+    }
+
+    .hero-footer{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap: 10px;
+      padding-top: 10px;
+      border-top: 1px solid rgba(255,255,255,.10);
+      opacity:.95;
+      font-size: 12px;
+    }
+
+    .login-card{
+      padding: 18px;
+      min-height: 420px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      gap: 14px;
+    }
+
+    .user-tile{
+      display:flex;
+      align-items:center;
+      gap: 12px;
+      padding: 12px;
+      border-radius: 16px;
+      background: rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.10);
+    }
+
+    .avatar{
+      width:52px; height:52px;
+      border-radius: 16px;
+      background: rgba(0,0,0,.22);
+      border:1px solid rgba(255,255,255,.12);
+      display:grid;
+      place-items:center;
+      font-weight: 800;
+      letter-spacing:.4px;
+    }
+
+    .user-meta{
+      display:flex;
+      flex-direction:column;
+      gap: 2px;
+    }
+    .user-meta .name{ font-weight: 800; }
+    .user-meta .sub{ opacity:.85; font-size: 12px; }
+
+    .field{
+      display:flex;
+      flex-direction:column;
+      gap: 8px;
+      margin-top: 6px;
+    }
+    .field label{ font-size: 12px; opacity:.9; }
+    .field input{
+      height: 42px;
+      border-radius: 14px;
+      padding: 0 12px;
+      background: rgba(0,0,0,.22);
+      border:1px solid rgba(255,255,255,.10);
+      color: #fff;
+      outline:none;
+    }
+    .field input:focus{ border-color: rgba(0,199,255,.35); }
+
+    .actions{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 10px;
+      margin-top: 6px;
+    }
+
+    .login-btn{
+      height: 42px;
+      padding: 0 14px;
+      border-radius: 14px;
+      border:1px solid rgba(0,199,255,.35);
+      background: rgba(0,199,255,.10);
+      color: #fff;
+      cursor:pointer;
+      font-weight: 800;
+      letter-spacing:.2px;
+    }
+    .login-btn:hover{ border-color: rgba(0,199,255,.55); }
+
+    .ghost-btn{
+      height: 42px;
+      padding: 0 14px;
+      border-radius: 14px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+      color:#fff;
+      cursor:pointer;
+    }
+
+    .small-links{
+      display:flex;
+      gap: 10px;
+      opacity:.9;
+      font-size: 12px;
+      margin-top: 4px;
+    }
+    .small-links a{
+      color:#fff;
+      text-decoration:none;
+      opacity:.85;
+    }
+    .small-links a:hover{ opacity:1; text-decoration: underline; }
+
+    .error{
+      display:none;
+      padding: 10px 12px;
+      border-radius: 14px;
+      background: rgba(255, 93, 93, .12);
+      border: 1px solid rgba(255, 93, 93, .35);
+      font-size: 12px;
+    }
+    .error.show{ display:block; }
+
+    @media (max-width: 860px){
+      .login-shell{ grid-template-columns: 1fr; }
+      .login-hero{ min-height: 240px; }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="desktop" class="wallpaper wallpaper-1 login-screen">
+
+    <div class="login-shell">
+
+      <section class="login-hero">
+        <div class="brand-row">
+          <div class="brand-badge">A</div>
+          <div class="brand-text">
+            <b>Arch Desktop</b>
+            <span>Secure login • HTML prototype</span>
+          </div>
+        </div>
+
+        <div class="hero-mid">
+          <h1>Welcome back</h1>
+          <p>
+            Press <b>Enter</b> to log in.
+          </p>
+        </div>
+
+        <div class="hero-footer">
+          <span id="loginClock"></span>
+          <span>Wi-Fi • 🔈 • 🔋</span>
+        </div>
+      </section>
+
+      <section class="login-card">
+        <div class="user-tile">
+          <div class="avatar">USER</div>
+          <div class="user-meta">
+            <div class="name">arch</div>
+            <div class="sub">Local account</div>
+          </div>
+        </div>
+
+        <div id="err" class="error"></div>
+
+        <div class="field">
+          <label for="username">Username</label>
+          <input id="username" type="text" placeholder="Enter username" autocomplete="off" />
+        </div>
+
+        <div class="field">
+          <label for="pw">Password</label>
+          <input id="pw" type="password" placeholder="Enter password" autocomplete="off" />
+        </div>
+
+        <div class="actions">
+          <button class="ghost-btn" id="btnPower" type="button">Power</button>
+          <button class="login-btn" id="btnLogin" type="button">Log In</button>
+        </div>
+
+        <div class="small-links">
+          <a href="#" id="btnHint">Hint - the username is visible</a>
+          <a href="#" id="btnWallpaper">Switch wallpaper</a>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <script>
+    const DESKTOP_PAGE = "Desktop.html";
+
+    const pw = document.getElementById("pw");
+    const username = document.getElementById("username");
+    const btnLogin = document.getElementById("btnLogin");
+    const err = document.getElementById("err");
+    const clockEl = document.getElementById("loginClock");
+    const desktop = document.getElementById("desktop");
+
+    let wallpaper = 1;
+
+    function updateClock(){
+      const now = new Date();
+      const opts = { weekday:"short", month:"short", day:"2-digit", hour:"2-digit", minute:"2-digit" };
+      clockEl.textContent = now.toLocaleString(undefined, opts).replace(",", "");
+    }
+    updateClock();
+    setInterval(updateClock, 1000 * 10);
+
+    function showError(msg){
+      err.textContent = msg;
+      err.classList.add("show");
+    }
+    function clearError(){
+      err.classList.remove("show");
+      err.textContent = "";
+    }
+
+    function login(){
+      clearError();
+
+      const USERNAME = "arch";
+      const PASSWORD = "RED1989";
+
+      if (!username.value.trim() || !pw.value.trim()){
+        showError("Username and password required");
+        return;
+      }
+
+      if (username.value !== USERNAME || pw.value !== PASSWORD){
+        showError("Incorrect username or password");
+        pw.value = "";
+        pw.focus();
+        return;
+      }
+
+      window.location.href = DESKTOP_PAGE;
+    }
+
+    btnLogin.addEventListener("click", login);
+    pw.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") login();
+      else clearError();
+    });
+
+    document.getElementById("btnHint").addEventListener("click", (e) => {
+      e.preventDefault();
+      showError("Hint: any password works — this is a prototype.");
+      pw.focus();
+    });
+
+    document.getElementById("btnPower").addEventListener("click", () => {
+      showError("Power menu disabled in demo.");
+    });
+
+    document.getElementById("btnWallpaper").addEventListener("click", (e) => {
+      e.preventDefault();
+      wallpaper = (wallpaper % 3) + 1;
+      desktop.classList.remove("wallpaper-1","wallpaper-2","wallpaper-3");
+      desktop.classList.add(`wallpaper-${wallpaper}`);
+      clearError();
+    });
+
+    setTimeout(() => username.focus(), 80);
+  </script>
+</body>
+</html>

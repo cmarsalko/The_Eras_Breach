@@ -1,0 +1,212 @@
+/* CSS for Setup Page — matches The Eras Breach homepage aesthetic */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+    --pink:  #ff2d78;
+    --gold:  #f5c518;
+    --teal:  #00ffe5;
+    --dark:  #0a0a0f;
+    --mid:   #111118;
+}
+
+html, body {
+    background-color: var(--dark);
+    color: white;
+    font-family: 'Barlow Condensed', sans-serif;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* ── BACKGROUND ── */
+.page-bg {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    background-image: url("pexels-pixabay-33687.jpg");
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.2) saturate(1.2);
+}
+.page-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+            radial-gradient(ellipse 70% 50% at 50% 30%, rgba(255,45,120,0.12) 0%, transparent 70%),
+            linear-gradient(to bottom, transparent 40%, var(--dark) 100%);
+}
+
+/* Scanlines */
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    background: repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 3px,
+            rgba(0,0,0,0.1) 3px,
+            rgba(0,0,0,0.1) 4px
+    );
+    pointer-events: none;
+}
+
+/* ── HEADER ── */
+header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(0,0,0,0.85);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    height: 64px;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+
+.logo-text {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.6rem;
+    letter-spacing: 0.08em;
+    color: white;
+}
+.logo-text span { color: var(--pink); }
+
+nav ul { list-style: none; display: flex; gap: 2rem; }
+nav a {
+    text-decoration: none;
+    color: rgba(255,255,255,0.7);
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+}
+nav a:hover { color: var(--teal); }
+
+/* ── MAIN ── */
+main {
+    position: relative;
+    z-index: 2;
+    padding: 120px 2rem 80px;
+    text-align: center;
+}
+
+.section-label {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    color: var(--teal);
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+}
+
+.section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(3rem, 8vw, 5.5rem);
+    line-height: 1;
+    color: white;
+    letter-spacing: 0.06em;
+    margin-bottom: 3rem;
+}
+.section-title span {
+    color: var(--pink);
+    text-shadow: 0 0 30px rgba(255,45,120,0.6);
+}
+
+/* ── CARDS GRID ── */
+.setup-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2rem;
+    max-width: 960px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.setup-card {
+    text-decoration: none;
+    background: rgba(10,10,20,0.72);
+    color: white;
+    padding: 3rem 2rem;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-top: 2px solid var(--pink);
+    border-radius: 4px;
+    backdrop-filter: blur(8px);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.1rem;
+
+    transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fade-up 0.6s ease forwards;
+}
+
+.setup-card:nth-child(1) { animation-delay: 0.15s; }
+.setup-card:nth-child(2) { animation-delay: 0.3s; }
+.setup-card:nth-child(3) { animation-delay: 0.45s; }
+
+.setup-card .icon {
+    font-size: 3rem;
+    color: var(--pink);
+    transition: color 0.25s;
+}
+
+.setup-card h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.7rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    color: white;
+    transition: color 0.25s;
+}
+
+.setup-card:hover {
+    transform: translateY(-8px);
+    background: rgba(255,45,120,0.12);
+    border-color: var(--pink);
+    box-shadow: 0 0 30px rgba(255,45,120,0.3), 0 12px 40px rgba(0,0,0,0.5);
+}
+.setup-card:hover .icon { color: var(--gold); }
+.setup-card:hover h2   { color: var(--pink); }
+
+/* ── TICKER ── */
+.ticker-bar {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    background: rgba(0,0,0,0.9);
+    border-top: 1px solid rgba(255,45,120,0.3);
+    height: 28px;
+    overflow: hidden;
+    z-index: 100;
+}
+.ticker-inner {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    white-space: nowrap;
+    animation: ticker 28s linear infinite;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.14em;
+    color: rgba(255,255,255,0.35);
+}
+.ticker-inner .sep { color: var(--pink); margin: 0 1.5rem; }
+@keyframes ticker {
+    from { transform: translateX(100vw); }
+    to   { transform: translateX(-100%); }
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fade-up {
+    to { opacity: 1; transform: translateY(0); }
+}
