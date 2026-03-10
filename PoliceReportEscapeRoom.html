@@ -216,15 +216,16 @@
     }
 
     document.getElementById('information-form').addEventListener('submit', function(e) {
-        const first = document.getElementById('first-name').value.trim().toLowerCase();
-        const last = document.getElementById('last-name').value.trim().toLowerCase();
-        if (first === 'jonas' && last === 'joe') {
-            clearInterval(interval);
-            timerEl.textContent = formatTime(seconds);
-            timerEl.classList.add('timer-solved');
-            window.location.href = 'endvideo.html#' + formatTime(seconds);
-        }
-    });
+    e.preventDefault();
+    const first = document.getElementById('first-name').value.trim().toLowerCase();
+    const last = document.getElementById('last-name').value.trim().toLowerCase();
+    if (first === 'jonas' && last === 'joe') {
+        clearInterval(interval);
+        timerEl.textContent = formatTime(seconds);
+        timerEl.classList.add('timer-solved');
+        window.location.href = 'endvideo.html#' + formatTime(seconds);
+    }
+});
 </script>
 
 </body>
