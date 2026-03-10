@@ -155,7 +155,7 @@
 
 <script>
     // Pull time from URL param passed by police report
-    const t = sessionStorage.getItem('finalTime');
+    const t = window.location.hash.replace('#', '');
     if (t) {
         document.getElementById('final-time').textContent = t;
         document.getElementById('sidebar-time').textContent = t;
