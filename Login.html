@@ -224,7 +224,7 @@
         <div class="hero-mid">
           <h1>Welcome back</h1>
           <p>
-            Press <b>Enter</b> to log in.
+            Enter your password and press <b>Enter</b> or click <b>Log In</b>.
           </p>
         </div>
 
@@ -246,11 +246,6 @@
         <div id="err" class="error"></div>
 
         <div class="field">
-          <label for="username">Username</label>
-          <input id="username" type="text" placeholder="Enter username" autocomplete="off" />
-        </div>
-
-        <div class="field">
           <label for="pw">Password</label>
           <input id="pw" type="password" placeholder="Enter password" autocomplete="off" />
         </div>
@@ -261,7 +256,6 @@
         </div>
 
         <div class="small-links">
-          <a href="#" id="btnHint">Hint - the username is visible</a>
           <a href="#" id="btnWallpaper">Switch wallpaper</a>
         </div>
       </section>
@@ -273,7 +267,6 @@
     const DESKTOP_PAGE = "Desktop.html";
 
     const pw = document.getElementById("pw");
-    const username = document.getElementById("username");
     const btnLogin = document.getElementById("btnLogin");
     const err = document.getElementById("err");
     const clockEl = document.getElementById("loginClock");
@@ -301,16 +294,15 @@
     function login(){
       clearError();
 
-      const USERNAME = "arch";
       const PASSWORD = "RED1989";
 
-      if (!username.value.trim() || !pw.value.trim()){
-        showError("Username and password required");
+      if (!pw.value.trim()){
+        showError("Password required");
         return;
       }
 
-      if (username.value !== USERNAME || pw.value !== PASSWORD){
-        showError("Incorrect username or password");
+      if (pw.value !== PASSWORD){
+        showError("Incorrect password");
         pw.value = "";
         pw.focus();
         return;
@@ -325,12 +317,6 @@
       else clearError();
     });
 
-    document.getElementById("btnHint").addEventListener("click", (e) => {
-      e.preventDefault();
-      showError("Hint: any password works — this is a prototype.");
-      pw.focus();
-    });
-
     document.getElementById("btnPower").addEventListener("click", () => {
       showError("Power menu disabled in demo.");
     });
@@ -343,7 +329,7 @@
       clearError();
     });
 
-    setTimeout(() => username.focus(), 80);
+    setTimeout(() => pw.focus(), 80);
   </script>
 </body>
 </html>
