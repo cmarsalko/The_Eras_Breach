@@ -93,3 +93,12 @@ h2 {
 .submit-button:hover {
     cursor: pointer;
 }
+
+#timer-display {
+  color: white;
+  font-family: Roboto, sans-serif;
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  align-self: center;
+}

@@ -22,6 +22,20 @@
 
   <main class="frame">
 
+    <div id="completion-banner" style="text-align:center; font-family:Roboto,sans-serif; margin-bottom:24px;">
+      <p style="font-size:18px; margin:0;">Case closed! Time to crack the case:</p>
+      <p id="final-time" style="font-size:48px; font-weight:900; letter-spacing:4px; margin:8px 0;">--:--</p>
+    </div>
+
+    <script>
+      const raw = parseInt(sessionStorage.getItem('erasBreachTime'));
+      if (!isNaN(raw)) {
+        const mins = String(Math.floor(raw / 60)).padStart(2, '0');
+        const secs = String(raw % 60).padStart(2, '0');
+        document.getElementById('final-time').textContent = mins + ':' + secs;
+      }
+    </script>
+
     <!-- Placeholder version -->
     <section class="video-box">
       <div class="video-label"></div>

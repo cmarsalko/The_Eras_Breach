@@ -34,11 +34,18 @@
         Once you have the attacker's identity, report it to the police to save Saylor Twift's music career!
         </p>
     </div>
-    <div class="button-container">
-        <a href="./PoliceReportEscapeRoom.html" class="button">
-            <button type="button">Save the Leaks</button>
-        </a>
+        <div class="button-container">
+        <button type="button" onclick="startGame()">Start Game</button>
     </div>
+
+    <script>
+    function startGame() {
+        sessionStorage.removeItem('erasBreachStart');
+        sessionStorage.removeItem('erasBreachTime');
+        sessionStorage.setItem('erasBreachStart', Date.now());
+        window.location.href = './PoliceReportEscapeRoom.html';
+    }
+    </script>
     
 </body>
 </html>
