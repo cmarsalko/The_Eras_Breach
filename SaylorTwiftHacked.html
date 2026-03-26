@@ -48,7 +48,7 @@ SECURITY LOG: hidden archive recovered
         <br />• HTML code defaced
       </p>
       <p>
-        If you are the site owner: rotate credentials, review access logs, restore from backup, and be sure to inspect ALL elements of the site.
+        My team barley made it here, its up to you. Scroll to the bottom for the login portal from the virtual desktop, but we have no idea what credentials the hacker might have left behind, if any. maybe the cipher key would work as the password? 
       </p>
       
     </section>
@@ -138,14 +138,59 @@ SECURITY LOG: hidden archive recovered
       <hr />
     </section>
 
-    <section id="newsletter" aria-label="Newsletter">
-      <h2>N̸̨͔̹̱͖̝̲̪͓̥̒̎͝͝ê̸̛̗̣̭͒̈́̾̀̚͘ẁ̵̧̮̖̞̘̗́̃̀͝ͅs̴͉̿̅̏̈́́̐̚͝l̸̜̪̲̙̟͖̪͐̌̂̅͐̏̌̓͜e̵̩̝̐̓̍̈͒̀͠͝ẗ̶̢̞̻̦̞̠̪̗́̆̆̏́͗͋͌ț̵̡̧̗͇̯̲͙͙̏̈́͋̉̋̀̐͘͜e̵͙͇̭͔̲̖͎̰̓͒̾ͅȑ̸̟̱͒̎̀̄̽̇̆̉͘̚</h2>
+    <section id="newsletter" aria-label="Admin Login">
+  <h2>V̶i̶r̶t̶u̶a̶l̶ D̶e̶s̶k̶t̶o̶p̶ L̶o̶g̶i̶n̶</h2>
 
-      <p>Get updates:</p>
+  <p><strong>[SYSTEM]</strong> Virtual Desktop Login</p>
 
-      <form action="#" method="post">
-        <fieldset>
-          <legend>Subscribe</legend>
+  <div id="login-error" style="display:none; margin: 8px auto; padding: 10px 14px; background: rgba(217,4,41,.18); border: 1px solid rgba(217,4,41,.6); border-radius: 10px; color: #d90429; font-size: 13px; width: min(340px, 100%);"></div>
 
-          <label for="email">Email</label><br />
-          <input id="email" name="email" type="email" placeholder="name@example.com" /><br /><br />
+  <div style="display:flex; flex-direction:column; align-items:center; gap:12px; margin-top:10px;">
+
+    <div style="width:min(340px,100%); text-align:left;">
+      <label for="admin-user" style="font-size:12px; opacity:.75; display:block; margin-bottom:4px;">Username</label>
+      <input id="admin-user" type="text" value="the_biggest_twiftie" readonly
+        style="width:100%; padding:.65rem .9rem; border-radius:10px; border:1px solid rgba(98,255,214,.3); background:rgba(0,0,0,.08); color:#000; font-family:inherit; font-weight:700; cursor:not-allowed; opacity:.8;" />
+    </div>
+
+    <div style="width:min(340px,100%); text-align:left;">
+      <label for="admin-pass" style="font-size:12px; opacity:.75; display:block; margin-bottom:4px;">Password</label>
+      <input id="admin-pass" type="password" placeholder="Enter password"
+        style="width:100%; padding:.65rem .9rem; border-radius:10px; border:1px solid rgba(98,255,214,.3); background:white; color:#000; font-family:inherit;" />
+    </div>
+
+    <button id="admin-login-btn" type="button"
+      style="width:min(340px,100%); padding:.75rem; border-radius:10px; background:#d90429; border:none; color:#fff; font-family:inherit; font-weight:900; font-size:1rem; letter-spacing:.06em; cursor:pointer;">
+      LOGIN
+    </button>
+
+  </div>
+
+  <script>
+    (function(){
+      const btn = document.getElementById('admin-login-btn');
+      const passInput = document.getElementById('admin-pass');
+      const errBox = document.getElementById('login-error');
+
+      function attempt() {
+        errBox.style.display = 'none';
+        if (!passInput.value.trim()) {
+          errBox.textContent = 'Password required.';
+          errBox.style.display = 'block';
+          return;
+        }
+        if (passInput.value !== 'RED1989') {
+          errBox.textContent = 'Access denied. Invalid credentials.';
+          errBox.style.display = 'block';
+          passInput.value = '';
+          passInput.focus();
+          return;
+        }
+        window.location.href = 'Desktop.html';
+      }
+
+      btn.addEventListener('click', attempt);
+      passInput.addEventListener('keydown', function(e){ if(e.key==='Enter') attempt(); });
+    })();
+  </script>
+</section>
